@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/data/ui/themedata.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Projects extends StatelessWidget {
   const Projects({super.key});
@@ -90,5 +91,11 @@ class Projects extends StatelessWidget {
     );
   }
 
-  void onPressed() {}
+  Future<void> onPressed() async {
+    final Uri githubUrl = Uri.parse("https://github.com/YugSoni5");
+
+    if (!await launchUrl(githubUrl, mode: LaunchMode.externalApplication)) {
+      throw Exception("Could not launch GitHub");
+    }
+  }
 }

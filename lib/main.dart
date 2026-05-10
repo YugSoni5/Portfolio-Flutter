@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp( 
       title: 'yugsoni.com',
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: true,
       home: Screen(),
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.green)),
     );
